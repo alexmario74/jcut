@@ -173,15 +173,13 @@ public class Configurator {
     /**
      * Stampa l'help
      *
-     * @return
      */
-    public static String help() {
+    public static void help() {
 
         HelpFormatter frmt = new HelpFormatter();
 
         frmt.printHelp(SCRIPT_NAME, opts);
 
-        return "";
 
     }
 
