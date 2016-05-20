@@ -1,7 +1,7 @@
 JCut
 ====
 
-Si tratta di un semplice progetto collegato alla presentazione: __Il mito dello scriptino__
+Si tratta di un semplice progetto collegato alla presentazione: __(Il mito dello scriptino)[http://www.slideshare.net/MarioAlexandroSantin/the-myth-of-the-small-script]__
 
 Build
 -----
