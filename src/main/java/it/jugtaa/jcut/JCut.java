@@ -25,9 +25,11 @@ public class JCut {
 
     /**
      * Provvede alle operazioni di inizializzazione della classe.
-     * Al momento crea l'oggetto di configurazione dell'applicazione passandogli i parametri necessari.
+     * Al momento crea l'oggetto di configurazione dell'applicazione
+     * passandogli i parametri necessari.
      *
-     * @param args è un array di stringhe che corrisponde ai parametri passati in input dall'utente.
+     * @param args è un array di stringhe che corrisponde ai parametri
+     *             passati in input dall'utente.
      */
     private void init(String[] args) {
 
@@ -52,7 +54,8 @@ public class JCut {
 
         try {
 
-            final CSVParser parse = CSVParser.parse(new File(conf.getDataFileName()), Charset.defaultCharset(),
+            final CSVParser parse = CSVParser.parse(
+                    new File(conf.getDataFileName()), Charset.defaultCharset(),
                     CSVFormat.DEFAULT.withDelimiter(conf.getFieldSeparator()));
 
             for (Iterator<CSVRecord> it = parse.iterator(); it.hasNext();) {
@@ -78,7 +81,7 @@ public class JCut {
 
             }
 
-        } catch(IOException e) {
+        } catch (IOException e) {
             log.error(e.getMessage());
         }
 
@@ -87,7 +90,8 @@ public class JCut {
     /**
      * Stampa il record su standard output su una riga con un carattere di a capo.
      *
-     * @param rec un array di stringhe dove ogni elemento corrisponde ad un campo da stampare su una riga
+     * @param rec un array di stringhe dove ogni elemento corrisponde ad un campo
+     *            da stampare su una riga
      */
     private void printRecord(String[] rec) {
         StringBuilder recStr = new StringBuilder();
@@ -103,7 +107,7 @@ public class JCut {
     }
 
     /**
-     * JCut
+     * JCut.
      *
      * @param args
      */

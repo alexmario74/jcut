@@ -47,14 +47,16 @@ public class Configurator {
     // Opzione di out che indica il nome di un file dove salvare l'output
     private static final String OPT_NAME_OUTPUT_FILE      = "o";
     private static final String OPT_NAME_OUTPUT_FILE_LONG = "out";
-    private static final String OUTPUT_FILE_DESC          = "The name of the file where the output will be saved";
+    private static final String OUTPUT_FILE_DESC          =
+            "The name of the file where the output will be saved";
 
     private static final String OPT_NAME_FIELD_SEPARATOR      = "fs";
     private static final String OPT_NAME_FIELD_SEPARATOR_LONG = "field-separator";
-    private static final String FIELD_SEPARATOR_DESC          = "The character used as the field separator, default value is ,";
+    private static final String FIELD_SEPARATOR_DESC          =
+            "The character used as the field separator, default value is ,";
 
     /**
-     * Costruttore, si occupa di definire le opzioni e di fare il parsing della riga di comando
+     * Costruttore, si occupa di definire le opzioni e di fare il parsing della riga di comando.
      *
      * @param options
      */
@@ -108,14 +110,18 @@ public class Configurator {
             }
 
             if (line.hasOption(OPT_NAME_FIELD_SEPARATOR)) {
-                fieldSeparator = line.getOptionValue(OPT_NAME_FIELD_SEPARATOR, DEFAULT_FIELD_SEPARATOR).charAt(0);
+                fieldSeparator = line.getOptionValue(OPT_NAME_FIELD_SEPARATOR,
+                        DEFAULT_FIELD_SEPARATOR).charAt(0);
                 if (log.isInfoEnabled()) {
-                    log.info("field separator {} value {}", OPT_NAME_FIELD_SEPARATOR, fieldSeparator);
+                    log.info("field separator {} value {}",
+                            OPT_NAME_FIELD_SEPARATOR, fieldSeparator);
                 }
-            } else if(line.hasOption(OPT_NAME_FIELD_SEPARATOR_LONG)) {
-                fieldSeparator = line.getOptionValue(OPT_NAME_FIELD_SEPARATOR_LONG, DEFAULT_FIELD_SEPARATOR).charAt(0);
+            } else if (line.hasOption(OPT_NAME_FIELD_SEPARATOR_LONG)) {
+                fieldSeparator = line.getOptionValue(OPT_NAME_FIELD_SEPARATOR_LONG,
+                        DEFAULT_FIELD_SEPARATOR).charAt(0);
                 if (log.isInfoEnabled()){
-                    log.info("field separator {} value {} ", OPT_NAME_FIELD_SEPARATOR_LONG, fieldSeparator);
+                    log.info("field separator {} value {} ",
+                            OPT_NAME_FIELD_SEPARATOR_LONG, fieldSeparator);
                 }
             } else {
                 fieldSeparator = DEFAULT_FIELD_SEPARATOR.charAt(0);
@@ -146,7 +152,8 @@ public class Configurator {
 
                 if (!f.exists()) {
 
-                    throw new Exception(String.format("File %s does not exists", dataFileName));
+                    throw new
+                            Exception(String.format("File %s does not exists", dataFileName));
 
                 } else {
                     if (log.isInfoEnabled()) {
@@ -158,7 +165,7 @@ public class Configurator {
                 throw new Exception("No data file provided");
             }
 
-        } catch(Exception e) {
+        } catch (Exception e) {
 
             log.error(e.getMessage());
 
@@ -171,7 +178,7 @@ public class Configurator {
     }
 
     /**
-     * Stampa l'help
+     * Stampa l'help.
      *
      */
     public static void help() {
@@ -179,7 +186,6 @@ public class Configurator {
         HelpFormatter frmt = new HelpFormatter();
 
         frmt.printHelp(SCRIPT_NAME, opts);
-
 
     }
 
@@ -191,6 +197,8 @@ public class Configurator {
         return dataFileName;
     }
 
-    public boolean getDebug() { return debug; }
+    public boolean getDebug() {
+        return debug;
+    }
 
 }
